@@ -1,7 +1,15 @@
 
-class CarbonFootprintCalcs:
+class Calculations:
+
+    def __init__(self):
+        self.elect_pollut_total = 0
+        self.therms_pollut_total = 0
+        self.mcf_pollut_total = 0
+        self.driven_pollut = 0
+        self.propane_pollut = 0
 
     #ALL emissions factors are based in units of kgCO2/unit
+
     def convert_electricity(self, kwh_per_year):
         ef = .707
         self.elect_pollut_total = kwh_per_year * ef
@@ -15,7 +23,7 @@ class CarbonFootprintCalcs:
     def convert_nat_gas_mcf(self, mcf_used):
         ef = 54.9
         self.mcf_pollut_total = mcf_used * ef
-        return self.convert_nat_gas_mcf()
+        return self.mcf_pollut_total
 
     def convert_fuel_oil(self, miles_driven):
         avg_miles = 11486
