@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'python3 -m py_compile sources/windows.py sources/pollut_api.py' 
+                sh 'python3 -m py_compile windows.py pollut_api.py' 
                 stash(name: 'compiled-results', includes: 'sources/*.py*') 
             }
         }
