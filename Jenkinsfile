@@ -21,7 +21,7 @@ stage('Test') {
                 }
             }
             steps {
-                sh 'py.test --junit-xml test-reports/results.xml sources/calc_unit_test.py'
+                sh 'py.test --junit-xml test-reports/results.xml calc_unit_test.py'
             }
             post {
                 always {
