@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'python:3.7.7-buster' } }
+    agent { docker { image 'python:2-alpine' } }
     stages {
         stage('build') {
             steps {
