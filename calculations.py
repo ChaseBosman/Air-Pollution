@@ -1,5 +1,5 @@
 
-class Calculations:
+class Calculation:
 
     def __init__(self):
         self.elect_pollut_total = 0
