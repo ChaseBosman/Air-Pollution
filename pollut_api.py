@@ -72,4 +72,4 @@ if __name__ == "__main__":
     getter.get_api_ip_based()
     print(getter.current_location.text)
     getter.read_json_data()
-    k = input("press close to exit") 
+    k = input("press close to exit")
