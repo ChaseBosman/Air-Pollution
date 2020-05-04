@@ -13,56 +13,62 @@ class PollutionApi:
         self.location_dict = json.loads(self.current_location.text)
         self.json_data = self.current_location.json()
 
+    def get_location(self):
+        if self.json_data['data']['city'].get('name'):
+            print("City:", self.json_data['data']['city'].get('name'))
+        else:
+            print("No City Available")
+
     def read_json_data(self):
         if self.json_data['data']['iaqi'].get('co'):
-            print("co", self.json_data['data']['iaqi']['co'].get('v'))
+            print("co,", self.json_data['data']['iaqi']['co'].get('v'))
         else:
-            print("not ok")
+            print("co, no data")
 
         if self.json_data['data']['iaqi'].get('h'):
-            print("h ", self.json_data['data']['iaqi']['h'].get('v'))
+            print("h,", self.json_data['data']['iaqi']['h'].get('v'))
         else:
-            print("not ok")
+            print("h, no data")
 
         if self.json_data['data']['iaqi'].get('n02'):
-            print("no2 ", self.json_data['data']['iaqi']['no2'].get('v'))
+            print("no2,", self.json_data['data']['iaqi']['no2'].get('v'))
         else:
-            print("not ok")
+            print("no2, no data")
 
         if self.json_data['data']['iaqi'].get('o3'):
-            print("o3 ", self.json_data['data']['iaqi']['o3'].get('v'))
+            print("o3,", self.json_data['data']['iaqi']['o3'].get('v'))
         else:
-            print("not ok")
+            print("o3, no data")
 
         if self.json_data['data']['iaqi'].get('p'):
-            print("p ", self.json_data['data']['iaqi']['p'].get('v'))
+            print("p,", self.json_data['data']['iaqi']['p'].get('v'))
         else:
-            print("not ok")
+            print("p, no data")
 
         if self.json_data['data']['iaqi'].get('pm10'):
-            print("pm 10 ", self.json_data['data']['iaqi']['pm10'].get('v'))
+            print("pm 10,", self.json_data['data']['iaqi']['pm10'].get('v'))
         else:
-            print("not ok")
+            print("pm 10, no data")
 
         if self.json_data['data']['iaqi'].get('pm25'):
-            print("pm 2.5 ", self.json_data['data']['iaqi']['pm25'].get('v'))
+            print("pm 2.5,", self.json_data['data']['iaqi']['pm25'].get('v'))
         else:
-            print("not ok")
+            print("pm 2.5, no data")
 
         if self.json_data['data']['iaqi'].get('so2'):
-            print("so2", self.json_data['data']['iaqi']['so2'].get('v'))
+            print("so2,", self.json_data['data']['iaqi']['so2'].get('v'))
         else:
-            print("not ok")
+            print("so2, no data")
 
         if self.json_data['data']['iaqi'].get('t'):
-            print("t", self.json_data['data']['iaqi']['t'].get('v'))
+            print("t,", self.json_data['data']['iaqi']['t'].get('v'))
         else:
-            print("not ok")
+            print("t, no data")
 
         if self.json_data['data']['iaqi'].get('w'):
-            print("wind", self.json_data['data']['iaqi']['w'].get('v'))
+            print("wind,", self.json_data['data']['iaqi']['w'].get('v'))
         else:
-            print("not ok")
+            print("wind, no data")
 
 
 
