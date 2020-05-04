@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'python3 -m py_compile controller.py pollut_api.py calculations.py user_input.py' 
+                sh 'python3 -m py_compile controller.py pollut_api.py calculations.py userinput.py' 
                 stash(name: 'compiled-results', includes: '*.py*') 
             }
         }
