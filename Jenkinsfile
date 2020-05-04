@@ -41,7 +41,7 @@ pipeline {
             }
             post {
                 success {
-                    archiveArtifacts "$/dist/pollut_api" 
+                    archiveArtifacts "${env.BUILD_ID}/dist/pollut_api" 
                     sh "docker run --rm -v ${VOLUME} ${IMAGE} 'rm -rf build dist'"
                 }
             }
