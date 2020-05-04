@@ -9,7 +9,7 @@ pipeline {
             }
             steps {
                 sh 'python3 -m py_compile pollut_api.py' 
-                stash(name: 'compiled-results', includes: 'pollut_api.py*') 
+                stash(name: 'compiled-results', includes: '*.py*') 
             }
         }
 	stage('Test') {
