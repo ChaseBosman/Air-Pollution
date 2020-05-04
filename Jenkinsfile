@@ -35,7 +35,7 @@ pipeline {
             steps {
                 dir(path: env.BUILD_ID) { 
                     unstash(name: 'compiled-results') 
-                    sh "docker run --rm -v /var/jenkins_home/workspace/air_pollution_tracker/36/sources:/src ${IMAGE} 'pyinstaller -F pollut_api.py'" 
+                    sh "docker run --rm -v /var/jenkins_home/workspace/air_pollution_tracker/36/src ${IMAGE} 'pyinstaller -F pollut_api.py'" 
                 }
             }
             post {
