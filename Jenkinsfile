@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'python3 -m py_compile windows.py pollut_api.py' 
+                sh 'python3 -m py_compile pollut_api.py windows.py' 
                 stash(name: 'compiled-results', includes: '*.py*') 
             }
         }
@@ -30,7 +30,7 @@ pipeline {
   	stage('Deliver') { 
             agent any
             environment { 
-                IMAGE = 'cdrx/pyinstaller-linux:python3'
+                IMAGE = 'cdrx/pyinstaller-windows:python3'
             }
             steps {
                 dir(path: env.BUILD_ID) { 
