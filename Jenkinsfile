@@ -30,7 +30,7 @@ pipeline {
   	stage('Deliver') { 
             agent any
             environment { 
-                IMAGE = 'cdrx/pyinstaller-windows:python3'
+                IMAGE = 'cdrx/pyinstaller-Linux:python3'
             }
             steps {
                 dir(path: env.BUILD_ID) { 
