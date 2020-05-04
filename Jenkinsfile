@@ -36,7 +36,7 @@ pipeline {
             steps {
                 dir(path: env.BUILD_ID) { 
                     unstash(name: 'compiled-results') 
-                    sh "docker run --rm -v ${VOLUME} ${IMAGE} 'pyinstaller -c -F pollut_api.py --hidden-import=requests -y'" 
+                    sh "docker run --rm -v ${VOLUME} ${IMAGE} 'pyinstaller -F pollut_api.py --hidden-import requests -y'" 
                 }
             }
             post {
