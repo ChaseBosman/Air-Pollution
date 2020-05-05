@@ -1,16 +1,14 @@
 import requests
 import json
-import PyQt5
 
 
 class PollutionApi:
     def __init__(self):
         self.payload = {'token': '25d51f72382f62cd4ead322c899c8e28fc445361'}
-        self.msg = "hi"
+        self.json_data = ""
 
     def get_api_ip_based(self):
         self.current_location = requests.get("https://api.waqi.info/feed/here/?", params=self.payload)
-        self.location_dict = json.loads(self.current_location.text)
         self.json_data = self.current_location.json()
 
     def get_location(self):
@@ -77,5 +75,6 @@ if __name__ == "__main__":
     getter = PollutionApi()
     getter.get_api_ip_based()
     print(getter.current_location.text)
+    print(getter.json_data['data']['city'].get('name'))
     getter.read_json_data()
     k = input("press close to exit")

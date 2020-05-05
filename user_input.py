@@ -16,10 +16,10 @@ class UserInput:
         self.kw_hour = float(input("Enter the number of kilowatt hours you consume in a month: "))
 
     def set_therms(self):
-        self.therms = float(input("Enter the amount of therms you use in a year: "))
+        self.therms = float(input("Enter the amount of therms you use in a month: "))
 
     def set_mcf(self):
-        self.mcf = float(input("Enter the amount of mcf you use in a year: "))
+        self.mcf = float(input("Enter the amount of mcf you use in a month: "))
 
     def set_propane(self):
         self.propane = float(input("Enter the amount of propane you use in a year: "))
@@ -31,10 +31,10 @@ class UserInput:
         return self.kw_hour * 12
 
     def get_therms(self):
-        return self.therms
+        return self.therms * 12
 
     def get_mcf(self):
-        return self.mcf
+        return self.mcf * 12
 
     def get_propane(self):
         return self.propane

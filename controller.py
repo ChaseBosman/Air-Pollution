@@ -1,12 +1,9 @@
-from userinput import UserInput
+from user_input import UserInput
 from calculations import Calculation
 from pollut_api import PollutionApi
 
 class Controller:
     def __init__(self):
-        self.new_choice = True
-        self.choice = 0
-        #self.choice == 0 = no current choice
         self.user_info = UserInput()
         self.user_calcs = Calculation()
         self.api_data = PollutionApi()
@@ -17,11 +14,11 @@ class Controller:
         if not self.user_info.stats_set:
             self.get_stats()
 
-        self.user_calcs.convert_electricity(self.user_info.get_kw_hour_to_years())
-        self.user_calcs.convert_nat_gas_therms(self.user_info.get_therms())
-        self.user_calcs.convert_nat_gas_mcf(self.user_info.get_mcf())
-        self.user_calcs.convert_fuel_oil(self.user_info.get_miles_driven())
-        self.user_calcs.propane(self.user_info.get_propane())
+        print(self.user_calcs.convert_electricity(self.user_info.get_kw_hour_to_years()))
+        print(self.user_calcs.convert_nat_gas_therms(self.user_info.get_therms()))
+        print(self.user_calcs.convert_nat_gas_mcf(self.user_info.get_mcf()))
+        print(self.user_calcs.convert_fuel_oil(self.user_info.get_miles_driven()))
+        print(self.user_calcs.propane(self.user_info.get_propane()))
 
     def get_stats(self):
         """"This class is used to obtain a users statistics for the first time"""
