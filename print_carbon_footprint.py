@@ -3,6 +3,7 @@ class PrintStatistics:
     @staticmethod
     def print_miles_driven(total):
         print("Your total miles is equivalent to", total, "kg of CO2 used a year.")
+        print("The average emissions from driving is 5,431 kog of CO2.")
 
     @staticmethod
     def print_kw_hour(total):

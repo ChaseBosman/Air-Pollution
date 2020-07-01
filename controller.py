@@ -24,7 +24,7 @@ class Controller:
         self.print_data.print_propane(self.user_calcs.propane(self.user_info.get_propane()))
 
     def get_stats(self):
-        """"This class is used to obtain a users statistics for the first time"""
+        """"This method is used to obtain a users statistics for the first time"""
         self.user_info.set_miles_driven()
         self.user_info.set_kw_hour()
         self.user_info.set_therms()
@@ -33,6 +33,7 @@ class Controller:
         self.user_info.stats_set = True
 
     def get_api_data(self):
+        """This method retrieves and prints current air pollution details"""
         self.api_data.get_api_ip_based()
         self.api_data.get_location()
         self.api_data.read_json_data()
