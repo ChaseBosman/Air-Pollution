@@ -9,7 +9,7 @@ pipeline {
             }
             steps {
                 sh 'python3 -m py_compile src/controller.py src/pollut_api.py src/calculations.py src/user_input.py src/print_carbon_footprint.py' 
-                stash(name: 'compiled-results', includes: '*.py*') 
+                stash(name: 'compiled-results', includes: '*src/.py*') 
             }
         }
 	stage('Test') {
