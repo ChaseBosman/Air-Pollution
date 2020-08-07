@@ -12,11 +12,22 @@ class MainWindowSelect:
         self.create_widgets()
         self.main_window.pack(fill=BOTH, expand=YES)
 
+    def open_api_screen(self):
+        """This method will eventually be implemented to open the api menu/screen"""
+        pass
+
+    def open_compute_screen(self):
+        """This method will eventually be implemented to open the computation screen"""
+        pass
+
     def create_widgets(self):
-        # Two buttons, one to visit the API page and one for computing carbon footprint
+        # Single Label
         self.tbl_label = Label(root_window, text="Select a menu option:").pack(side=TOP, expand=YES)
-        self.compute_but = Button(root_window, text="Compute Your Carbon Footprint").pack(side=TOP, expand=YES)
-        self.api_but = Button(root_window, text="Find Current Pollution Levels").pack(side=TOP, expand=YES)
+        # Two buttons, one to visit the API page and one for computing carbon footprint
+        self.compute_but = Button(root_window, text="Compute Your Carbon Footprint", command=lambda:
+            self.open_compute_screen()).pack(side=TOP, expand=YES)
+        self.api_but = Button(root_window, text="Find Current Pollution Levels", command=lambda:
+            self.open_api_screen()).pack(side=TOP, expand=YES)
 
 
 if __name__ == "__main__":

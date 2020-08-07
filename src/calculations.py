@@ -8,7 +8,7 @@ class Calculation:
         self.driven_pollut = 0
         self.propane_pollut = 0
 
-    #ALL emissions factors are based in units of kgCO2/unit
+    # ALL emissions factors are based in units of kgCO2/unit
 
     def convert_electricity(self, kwh_per_year):
         ef = .707
@@ -32,7 +32,7 @@ class Calculation:
         return self.driven_pollut
 
     def propane(self, litres_used):
-        #per cylinder
+        # per cylinder
         ef = 24
         self.propane_pollut = litres_used * ef
         return self.propane_pollut
