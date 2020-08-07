@@ -7,7 +7,7 @@ class ApiWindow:
         self.master = master.geometry("450x300")
         self.frame = Frame(self.master)
 
-        # call method to create widgets and pack them
+        # call method to create widgets
         self.create_widgets()
 
     def create_widgets(self):
