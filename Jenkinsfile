@@ -8,7 +8,8 @@ pipeline {
                 }
             }
             steps {
-                sh 'python3 -m py_compile src/controller.py src/pollut_api.py src/calculations.py src/user_input.py src/print_carbon_footprint.py' 
+                sh 'python3 -m py_compile src/controller.py src/pollut_api.py src/calculations.py src/user_input.py src/print_carbon_footprint.py
+			src/main_window_select.py' 
                 stash(name: 'compiled-results', includes: 'src/*.py*') 
             }
         }
