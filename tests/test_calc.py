@@ -43,3 +43,7 @@ class TestCalcs(unittest.TestCase):
         calcs = calculation.Calculation()
         result = calcs.propane(2)
         self.assertEqual(result, 2 * 24)
+
+
+if __name__ == '__main__':
+    unittest.main()

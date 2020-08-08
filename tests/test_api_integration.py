@@ -10,8 +10,7 @@ class TestApiIntegration(unittest.TestCase):
         through aqi.waqi's sample aqi finder"""
         api_response = PollutionApi()
         api_response.get_api_ip_based()
-        self.assertEqual("ok",
-                         api_response.json_data['status'])
+        self.assertEqual("ok", api_response.json_data['status'])
 
     def test_status(self):
         """Test if the api is up and running aka status"""
@@ -19,3 +18,6 @@ class TestApiIntegration(unittest.TestCase):
         api_response.get_api_ip_based()
         self.assertEqual("ok", api_response.json_data['status'])
 
+
+if __name__ == '__main__':
+    unittest.main()

@@ -27,3 +27,7 @@ class TestUserInput(unittest.TestCase):
         self.user_data = user_input.UserInput()
         self.user_data.propane = 500
         self.assertEqual(self.user_data.get_propane(), 500)
+
+
+if __name__ == '__main__':
+    unittest.main()

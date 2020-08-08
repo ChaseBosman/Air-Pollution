@@ -8,3 +8,7 @@ class TestControllerIntegration(unittest.TestCase):
         self.user_info = UserInput()
         self.assertFalse(self.user_info.stats_set)
 
+
+if __name__ == '__main__':
+    unittest.main()
+
