@@ -8,7 +8,7 @@ statistics.
 
 Code is managed through a jenkins pipeline to automate testing with jUnit. A build stage is also present. 
 
-Code is ran through main_window__select.py, controller.py can be referenced to find how computations work while it is being updated.
+Code is ran through main_window__select.py.
 
 Github located at: https://github.com/ChaseBosman/Air-Pollution
 
