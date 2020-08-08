@@ -1,5 +1,4 @@
 
-
 class UserInput:
     def __init__(self):
         self.miles_driven = 0

@@ -10,8 +10,8 @@ class TestApiIntegration(unittest.TestCase):
         through aqi.waqi's sample aqi finder"""
         api_response = PollutionApi()
         api_response.get_api_ip_based()
-        self.assertEqual("Tahoe City - 221 Fairway Drive, Placer, California",
-                         api_response.json_data['data']['city']['name'])
+        self.assertEqual("ok",
+                         api_response.json_data['status'])
 
     def test_status(self):
         """Test if the api is up and running aka status"""
