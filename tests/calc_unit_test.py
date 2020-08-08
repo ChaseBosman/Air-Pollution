@@ -1,5 +1,5 @@
 import unittest
-import calculations
+import calculation
 
 
 class TestCalcs(unittest.TestCase):
@@ -8,7 +8,7 @@ class TestCalcs(unittest.TestCase):
         """
         Electricity conversion to pollution units
         """
-        calcs = calculations.Calculation()
+        calcs = calculation.Calculation()
         result = calcs.convert_electricity(2)
         self.assertEqual(result, 2 * .707)
 
@@ -16,7 +16,7 @@ class TestCalcs(unittest.TestCase):
         """
         therms conversion to pollution units
         """
-        calcs = calculations.Calculation()
+        calcs = calculation.Calculation()
         result = calcs.convert_nat_gas_therms(2)
         self.assertEqual(result, 2 * 5.3)
 
@@ -24,7 +24,7 @@ class TestCalcs(unittest.TestCase):
         """
         mcf conversion to pollution units
         """
-        calcs = calculations.Calculation()
+        calcs = calculation.Calculation()
         result = calcs.convert_nat_gas_mcf(2)
         self.assertEqual(result, 2 * 54.9)
 
@@ -32,7 +32,7 @@ class TestCalcs(unittest.TestCase):
         """
         test_fuel_conversion conversion to pollution units
         """
-        calcs = calculations.Calculation()
+        calcs = calculation.Calculation()
         result = calcs.convert_fuel_oil(11486)
         self.assertEqual(result, 4630)
 
@@ -40,6 +40,6 @@ class TestCalcs(unittest.TestCase):
         """
         propane conversion to pollution units
         """
-        calcs = calculations.Calculation()
+        calcs = calculation.Calculation()
         result = calcs.propane(2)
         self.assertEqual(result, 2 * 24)
