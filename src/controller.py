@@ -1,5 +1,5 @@
 from user_input import UserInput
-from calculations import Calculation
+from calculation import Calculation
 from pollution_api import PollutionApi
 from print_carbon_footprint import PrintStatistics
 
@@ -34,9 +34,11 @@ class Controller:
 
     def get_api_data(self):
         """This method retrieves and prints current air pollution details"""
+        """These methods no longer work
         self.api_data.get_api_ip_based()
         self.api_data.get_location()
         self.api_data.read_json_data()
+        """
 
 
 if __name__ == "__main__":

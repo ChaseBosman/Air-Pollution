@@ -1,5 +1,6 @@
 from tkinter import *
 from api_window import ApiWindow
+from compute_window import ComputeWindow
 
 
 class MainWindowSelect:
@@ -15,20 +16,20 @@ class MainWindowSelect:
 
     @staticmethod
     def open_api_screen():
+        """This method creates a new ApiWindow object, found in compute_window.py (opens api window)"""
         ApiWindow()
 
-    def open_compute_screen(self):
-        """This method will eventually be implemented to open the computation screen"""
-        pass
+    @staticmethod
+    def open_compute_screen():
+        """This method creates a new ComputeWindow object, found in compute_window.py (opens computation window)"""
+        ComputeWindow()
 
     def create_widgets(self):
-        # Single Label
-        self.tbl_label = Label(self.frame, text="Select a menu option:").pack(side=TOP, expand=YES)
         # Two buttons, one to visit the API page and one for computing carbon footprint
         self.compute_but = Button(self.frame, text="Compute Your Carbon Footprint", command=lambda:
-        self.open_compute_screen()).pack(side=TOP, expand=YES)
+                            self.open_compute_screen()).pack(side=TOP, expand=YES)
         self.api_but = Button(self.frame, text="Find Current Pollution Levels", command=lambda:
-        self.open_api_screen()).pack(side=TOP, expand=YES)
+                            self.open_api_screen()).pack(side=TOP, expand=YES)
 
 
 if __name__ == "__main__":
