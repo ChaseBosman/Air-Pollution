@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'python3 -m py_compile src/main_window_select.py src/compute_window.py src/api_window.py src/pollution_api.py src/calculations.py' 
+                sh 'python3 -m py_compile src/main_window_select.py src/compute_window.py src/api_window.py src/pollution_api.py src/calculation.py' 
                 stash(name: 'compiled-results', includes: 'src/*.py*') 
             }
         }
