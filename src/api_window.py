@@ -1,17 +1,19 @@
 from tkinter import *
+from pollution_api import PollutionApi
 
 
 class ApiWindow(Toplevel):
     def __init__(self):
         self.top = Toplevel.__init__(self)
-        self.geometry("450x320")
+        self.geometry("450x300")
 
+        self.api_data = PollutionApi()
         # call method to create widgets
         self.create_widgets()
 
     def create_widgets(self):
-        self.header_label = Label(self, text="Current air quality statistics in your desired area")
-        self.header_label.grid(row=0, column=1)
+        self.header_label = Label(self, text="Current air quality statistics in your area")
+        self.header_label.grid(row=0, column=1, pady=8)
 
         self.loc_label = Label(self, text="Data source location:")
         self.co_label = Label(self, text="CO:")
@@ -37,17 +39,17 @@ class ApiWindow(Toplevel):
         self.wind_label.grid(row=10, column=0, sticky=E)
         self.co_label.grid(row=11, column=0, sticky=E)
 
-        self.loc_display = Label(self, text=" :")
-        self.co_display = Label(self, text=":")
-        self.h_display = Label(self, text=":")
-        self.no2_display = Label(self, text=":")
-        self.o3_display = Label(self, text=":")
-        self.p_display = Label(self, text=":")
-        self.pm10_display = Label(self, text=":")
-        self.pm25_display = Label(self, text=":")
-        self.so2_display = Label(self, text=":")
-        self.t_display = Label(self, text=":")
-        self.wind_display = Label(self, text=":")
+        self.loc_display = Label(self, text=self.api_data.get_location())
+        self.co_display = Label(self, text=self.api_data.get_co())
+        self.h_display = Label(self, text=self.api_data.get_h())
+        self.no2_display = Label(self, text=self.api_data.get_no2())
+        self.o3_display = Label(self, text=self.api_data.get_o3())
+        self.p_display = Label(self, text=self.api_data.get_p())
+        self.pm10_display = Label(self, text=self.api_data.get_pm10())
+        self.pm25_display = Label(self, text=self.api_data.get_pm25())
+        self.so2_display = Label(self, text=self.api_data.get_so2())
+        self.t_display = Label(self, text=self.api_data.get_t())
+        self.wind_display = Label(self, text=self.api_data.get_w())
 
         self.loc_display.grid(row=1, column=1)
         self.h_display.grid(row=2, column=1)
@@ -63,8 +65,10 @@ class ApiWindow(Toplevel):
 
 
 
+
+
 if __name__ == "__main__":
     root_window = Tk()
     root_window.title("api")
-    curr_menu = ApiWindow(master=root_window)
+    curr_menu = ApiWindow()
     root_window.mainloop()

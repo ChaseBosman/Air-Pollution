@@ -6,6 +6,7 @@ class PollutionApi:
     def __init__(self):
         self.payload = {'token': '25d51f72382f62cd4ead322c899c8e28fc445361'}
         self.json_data = ""
+        self.get_api_ip_based()
 
     def get_api_ip_based(self):
         self.current_location = requests.get("https://api.waqi.info/feed/here/?", params=self.payload)
@@ -13,60 +14,69 @@ class PollutionApi:
 
     def get_location(self):
         if self.json_data['data']['city'].get('name'):
-            print("City:", self.json_data['data']['city'].get('name'))
+            return self.json_data['data']['city'].get('name')
         else:
-            print("No City Available")
+            return "No City Available"
 
-    def read_json_data(self):
+    def get_co(self):
         if self.json_data['data']['iaqi'].get('co'):
-            print("co,", self.json_data['data']['iaqi']['co'].get('v'))
+            return self.json_data['data']['iaqi']['co'].get('v')
         else:
-            print("co, no data")
+            return "No Data Available"
 
+    def get_h(self):
         if self.json_data['data']['iaqi'].get('h'):
-            print("h,", self.json_data['data']['iaqi']['h'].get('v'))
+            return self.json_data['data']['iaqi']['h'].get('v')
         else:
-            print("h, no data")
+            return "No Data Available"
 
+    def get_no2(self):
         if self.json_data['data']['iaqi'].get('n02'):
-            print("no2,", self.json_data['data']['iaqi']['no2'].get('v'))
+            return self.json_data['data']['iaqi']['no2'].get('v')
         else:
-            print("no2, no data")
+            return "No Data Available"
 
+    def get_o3(self):
         if self.json_data['data']['iaqi'].get('o3'):
-            print("o3,", self.json_data['data']['iaqi']['o3'].get('v'))
+            return self.json_data['data']['iaqi']['o3'].get('v')
         else:
-            print("o3, no data")
+            return "No Data Available"
 
+    def get_p(self):
         if self.json_data['data']['iaqi'].get('p'):
-            print("p,", self.json_data['data']['iaqi']['p'].get('v'))
+            return self.json_data['data']['iaqi']['p'].get('v')
         else:
-            print("p, no data")
+            return "No Data Available"
 
+    def get_pm10(self):
         if self.json_data['data']['iaqi'].get('pm10'):
-            print("pm 10,", self.json_data['data']['iaqi']['pm10'].get('v'))
+            return self.json_data['data']['iaqi']['pm10'].get('v')
         else:
-            print("pm 10, no data")
+            return "No Data Available"
 
+    def get_pm25(self):
         if self.json_data['data']['iaqi'].get('pm25'):
-            print("pm 2.5,", self.json_data['data']['iaqi']['pm25'].get('v'))
+            return self.json_data['data']['iaqi']['pm25'].get('v')
         else:
-            print("pm 2.5, no data")
+            return "No Data Available"
 
+    def get_so2(self):
         if self.json_data['data']['iaqi'].get('so2'):
-            print("so2,", self.json_data['data']['iaqi']['so2'].get('v'))
+            return self.json_data['data']['iaqi']['so2'].get('v')
         else:
-            print("so2, no data")
+            return "No Data Available"
 
+    def get_t(self):
         if self.json_data['data']['iaqi'].get('t'):
-            print("t,", self.json_data['data']['iaqi']['t'].get('v'))
+            return self.json_data['data']['iaqi']['t'].get('v')
         else:
-            print("t, no data")
+            return "No Data Available"
 
+    def get_w(self):
         if self.json_data['data']['iaqi'].get('w'):
-            print("wind,", self.json_data['data']['iaqi']['w'].get('v'))
+            return self.json_data['data']['iaqi']['w'].get('v')
         else:
-            print("wind, no data")
+            return "No Data Available"
 
 
 

@@ -13,7 +13,8 @@ class MainWindowSelect:
         self.create_widgets()
         self.frame.pack(fill=BOTH, expand=YES)
 
-    def open_api_screen(self):
+    @staticmethod
+    def open_api_screen():
         ApiWindow()
 
     def open_compute_screen(self):

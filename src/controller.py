@@ -1,6 +1,6 @@
 from user_input import UserInput
 from calculations import Calculation
-from pollut_api import PollutionApi
+from pollution_api import PollutionApi
 from print_carbon_footprint import PrintStatistics
 
 

@@ -1,5 +1,5 @@
 import unittest
-from pollut_api import PollutionApi
+from pollution_api import PollutionApi
 
 
 class TestApiIntegration(unittest.TestCase):
