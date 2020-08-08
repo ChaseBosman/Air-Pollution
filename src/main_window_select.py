@@ -14,7 +14,7 @@ class MainWindowSelect:
         self.frame.pack(fill=BOTH, expand=YES)
 
     def open_api_screen(self):
-        self.new_window = ApiWindow()
+        ApiWindow()
 
     def open_compute_screen(self):
         """This method will eventually be implemented to open the computation screen"""
