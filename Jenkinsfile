@@ -21,6 +21,12 @@ pipeline {
             steps {
                 sh 'nosetests --with-xunit'
             }
+            post {
+                always {
+                    junit 'test-reports/nosetests.xml'
+                    junit 'nosetests.xml'
+                }
+            }
         }
     }
 }
