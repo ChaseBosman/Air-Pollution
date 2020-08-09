@@ -1,14 +1,5 @@
 import unittest
-import sys
-import os
-
-def get_abs_dir_for_module(*args):
-    return os.path.join(os.path.dirname(os.path.realpath(__file__)), *args)
-repo_dir = get_abs_dir_for_module("..")
-sys.path.append(repo_dir)
-import src.calculation as calculation
-
-from calculation import Calculation
+import calculation
 
 
 class TestCalcs(unittest.TestCase):
