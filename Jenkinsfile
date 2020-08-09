@@ -21,11 +21,6 @@ pipeline {
             steps {
                 sh 'nosetests --with-xunit'
             }
-            post {
-                always {
-                    junit 'test-reports/results.xml'
-                }
-            }
         }
     }
 }
