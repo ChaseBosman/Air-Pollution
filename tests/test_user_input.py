@@ -1,6 +1,14 @@
 import unittest
-import user_input
+import sys
+import os
 
+def get_abs_dir_for_module(*args):
+    return os.path.join(os.path.dirname(os.path.realpath(__file__)), *args)
+repo_dir = get_abs_dir_for_module("..")
+sys.path.append(repo_dir)
+import src.user_input as user_input
+
+from user_input import UserInput
 
 class TestUserInput(unittest.TestCase):
     def test_get_miles(self):
