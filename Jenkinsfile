@@ -19,7 +19,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'py.test --junit-xml test-reports/results.xml tests/test_calc.py tests/test_api_integration.py tests/test_user_input.py tests/test_controller_integration.py'
+                sh 'nosetests --with-xunit'
             }
             post {
                 always {
