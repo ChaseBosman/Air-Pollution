@@ -104,7 +104,7 @@ class TestApiIntegration(unittest.TestCase):
     def test_w(self):
         api_response = pollution_api.PollutionApi()
         api_response.get_api_ip_based()
-        
+
         if api_response.json_data['data']['iaqi'].get('w'):
             self.assertEqual(api_response.get_w(), api_response.json_data['data']['iaqi']['w'].get('v'))
         else:
